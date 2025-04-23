@@ -1,0 +1,20 @@
+parrot image --> 640 by 640 --> 409,600 pixels
+
+8 colors --> 2^3 --> 3 bits/color
+
+
+
+--> since there are 8 colors, all eight colors can be represented by 3 bits
+with 
+
+--> each pixel can be encoded using binary(ex.000,001,010,..., 111), with 
+each color represented by its own combination of the 3 bits. A mapping of the can be used
+to re-associate the colors to the pixels with the corrosponding bit combination.
+ex.
+000 = red
+001 = orange
+010 = yellow
+
+-->409,600 pixels * 3 bits/pixel = 1,228,800 bits
+-->1,228,800 bits / 8 bits = 153,600  bytes
+--> 153,600 bytes / 1024 bytes = 150 kibibytes

@@ -1,0 +1,13 @@
+
+- A key : Move Left
+- D key : Move Right
+- Up Arrow key : Speed Up
+- Up Down key : Slow Down
+- Objective: Catch the cats, lives will decrease if cat dies
+- Getting hit with a block will end the game
+- Press R to reset the game
+- The game ends when the user has 0 lives
+
+I chose to reset the game every time the window changes sizes
+
+

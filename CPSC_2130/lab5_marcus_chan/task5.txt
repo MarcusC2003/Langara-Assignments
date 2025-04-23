@@ -1,0 +1,12 @@
+both images seem simlar
+-->my filtered image looks a bit more rough
+--> pixels look a bit smoother
+
+-->to make my filter better, I could add a function to my algorithm
+that reduce the euclidean distance between a pixel and its neighboring
+pixels if the pixels euclidean distance is over a certain threshold.
+
+ex. if the threshold is 200 and rgb1 = 200 , rgb2 = 500 --> rgb2s value will equally reduce/increase
+ all of its rgb values to get a smoother transition between the 2 pixels
+
+ 

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Babylon.js sample code</title>
+
+    <!-- Babylon.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+    <script src="https://assets.babylonjs.com/generated/Assets.js"></script>
+    <script src="https://cdn.babylonjs.com/recast.js"></script>
+    <script src="https://cdn.babylonjs.com/ammo.js"></script>
+    <script src="https://cdn.babylonjs.com/havok/HavokPhysics_umd.js"></script>
+    <script src="https://cdn.babylonjs.com/cannon.js"></script>
+    <script src="https://cdn.babylonjs.com/Oimo.js"></script>
+    <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+    <script src="https://cdn.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
+    <script src="https://cdn.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+    <script src="https://cdn.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+    <script src="https://cdn.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+
+    <style>
+        html,
+        body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #renderCanvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        #canvasZone {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvasZone"><canvas id="renderCanvas"></canvas></div>
+    <script>
+        var canvas = document.getElementById("renderCanvas");
+
+        var startRenderLoop = function (engine, canvas) {
+            engine.runRenderLoop(function () {
+                if (sceneToRender && sceneToRender.activeCamera) {
+                    sceneToRender.render();
+                }
+            });
+        }
+
+        var engine = null;
+        var scene = null;
+        var sceneToRender = null;
+        var createDefaultEngine = function () { return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true, disableWebGL2Support: false }); };
+        // You have to create a function called createScene. This function must return a BABYLON.Scene object
+        // You can reference the following variables: engine, canvas
+        // You must at least define a camera
+
+        var createScene = function () {
+            var scene = new BABYLON.Scene(engine);
+
+            var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 2.5, 60, BABYLON.Vector3.Zero(), scene);
+            // var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
+
+            // This targets the camera to scene origin
+            camera.setTarget(BABYLON.Vector3.Zero());
+
+            // This attaches the camera to the canvas
+            camera.attachControl(canvas, true);
+
+            //1.objects
+
+            //box
+            let box = BABYLON.MeshBuilder.CreateBox("box", { size: 2 }, scene);
+
+            let boxMaterial = new BABYLON.StandardMaterial("box-material");
+            boxMaterial.diffuseTexture = new BABYLON.Texture("images/boxpattern.jpg");
+            boxMaterial.reflectionTexture = new BABYLON.MirrorTexture("mirror", 100, scene, true);
+            boxMaterial.emissiveTexture = new BABYLON.Texture("images/spherepattern.jpg", scene);
+            box.material = boxMaterial;
+
+
+            //sphere
+            var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 2.2 }, scene);
+            let sphereMaterial = new BABYLON.StandardMaterial("sphere-material");
+            sphereMaterial.diffuseTexture = new BABYLON.Texture("images/spherepattern.jpg");
+            sphere.material = sphereMaterial;
+            sphere.position.x = 2;
+            sphere.position.y = 6.6;
+
+
+
+            //ground
+            let ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 60, height: 15 }, scene);
+            ground.position.y = -1;
+
+            let groundMaterial = new BABYLON.StandardMaterial("groundMaterial", scene);
+            groundMaterial.diffuseColor = new BABYLON.Color3(0, 0.5, 0);
+            groundMaterial.diffuseTexture = new BABYLON.Texture("images/grass.jpg");
+
+            ground.material = groundMaterial;
+
+            //platform
+
+            let platform1 = BABYLON.MeshBuilder.CreateBox("platform1", { width: 5, height: 0.5, depth: 4 }, scene);
+            platform1.position.x = -10;
+            platform1.position.y = 2;
+
+            let platform2 = BABYLON.MeshBuilder.CreateBox("platform2", { width: 9, height: 0.5, depth: 4 }, scene);
+            platform2.position.x = 0;
+            platform2.position.y = 5.2;
+
+            let platform3 = BABYLON.MeshBuilder.CreateBox("platform3", { width: 13, height: 0.5, depth: 4 }, scene);
+            platform3.position.x = 10
+            platform3.position.y = 1.99;
+            platform3.rotation = new BABYLON.Vector3(0, 0, (Math.PI / 1.2));
+
+            let platformMaterial = new BABYLON.StandardMaterial("groundMaterial", scene);
+            platformMaterial.diffuseColor = new BABYLON.Color3(1, 1, 0);
+
+            platform1.material = platformMaterial;
+            platform2.material = platformMaterial;
+            platform3.material = platformMaterial;
+
+
+            //2.light
+            let light1 = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(3, 0.5, 0));
+            let light2 = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 0.5, 3));
+            light1.groundColor = new BABYLON.Color3(1, 0, 0);
+            light2.groundColor = new BABYLON.Color3(0, 0, 1);
+
+
+            //3. animation
+            const FRAME_RATE = 30;
+            const ANIMATION_LENGTH = 5;
+
+            //cube animations
+            let cubeXAnimation = new BABYLON.Animation("cube X animation", "position.x", FRAME_RATE, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
+            let cubeYAnimation = new BABYLON.Animation("cube Y animation", "position.y", FRAME_RATE, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
+
+            let sphereXAnimation = new BABYLON.Animation("sphere X animation", "position.x", FRAME_RATE, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
+            let sphereYAnimation = new BABYLON.Animation("sphere Y animation", "position.y", FRAME_RATE, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
+            let sphereRAnimation = new BABYLON.Animation("sphere R animation", "rotation.z", FRAME_RATE, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
+
+
+            let boxXFrames = [
+                { frame: 0, value: -20 },
+                { frame: (ANIMATION_LENGTH * FRAME_RATE) / 2, value: 0 },
+                { frame: ANIMATION_LENGTH * FRAME_RATE, value: 0 }
+            ];
+
+            let boxYFrames = [
+                { frame: 0, value: 0 },
+                { frame: FRAME_RATE * 0.5, value: 0 },
+                {
+                    frame: FRAME_RATE * 0.7, value: 5
+                },
+                { frame: FRAME_RATE * 1, value: 3.2 },
+                { frame: FRAME_RATE * 1.2, value: 3.2 },
+                { frame: FRAME_RATE * 1.6, value: 8 },
+                { frame: FRAME_RATE * 2.1, value: 6.5 },
+                { frame: ANIMATION_LENGTH * FRAME_RATE, value: 6.5 }
+            ];
+
+            let sphereXFrames = [
+                { frame: 0, value: 2 },
+                { frame: (ANIMATION_LENGTH * FRAME_RATE) / 2, value: 2 },
+                { frame: ANIMATION_LENGTH * FRAME_RATE, value: 20 }
+            ];
+            let sphereYFrames = [
+                { frame: 0, value: 6.6 },
+                { frame: (ANIMATION_LENGTH * FRAME_RATE) / 2 + (FRAME_RATE * 0.4), value: 6.6 },
+                { frame: (ANIMATION_LENGTH * FRAME_RATE) / 2 + (FRAME_RATE * 2), value: 0 },
+                { frame: ANIMATION_LENGTH * FRAME_RATE, value: 0 }
+
+            ];
+            let sphereRFrames = [
+                { frame: 0, value: 0 },
+                { frame: (ANIMATION_LENGTH * FRAME_RATE) / 2, value: 0 },
+                { frame: (ANIMATION_LENGTH * FRAME_RATE) / 2, value: -Math.PI / 4 },
+                { frame: ANIMATION_LENGTH * FRAME_RATE, value: -Math.PI * 5.5 }
+            ];
+
+
+
+            cubeXAnimation.setKeys(boxXFrames);
+            cubeYAnimation.setKeys(boxYFrames);
+            sphereXAnimation.setKeys(sphereXFrames);
+            sphereYAnimation.setKeys(sphereYFrames);
+            sphereRAnimation.setKeys(sphereRFrames);
+
+            scene.beginDirectAnimation(box, [cubeXAnimation, cubeYAnimation], 0, ANIMATION_LENGTH * FRAME_RATE, true);
+            scene.beginDirectAnimation(sphere, [sphereXAnimation, sphereRAnimation, sphereYAnimation], 0, ANIMATION_LENGTH * FRAME_RATE, true);
+
+            return scene;
+
+            return scene;
+        };
+
+        window.initFunction = async function () {
+            var asyncEngineCreation = async function () {
+                try {
+                    return createDefaultEngine();
+                } catch (e) {
+                    console.log("the available createEngine function failed. Creating the default engine instead");
+                    return createDefaultEngine();
+                }
+            }
+
+            window.engine = await asyncEngineCreation();
+            if (!engine) throw 'engine should not be null.';
+            startRenderLoop(engine, canvas);
+            window.scene = createScene();
+        };
+
+        initFunction().then(() => {
+            sceneToRender = scene
+        });
+
+        // Resize
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
+    </script>
+</body>
+
+</html>

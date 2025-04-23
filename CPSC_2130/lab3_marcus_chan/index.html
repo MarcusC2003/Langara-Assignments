@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Its Raining Cats...</title>
+    <script src="game.js" defer></script>
+    <style>
+        body {
+            overflow: hidden;
+            background-color: rgb(225, 248, 255);
+        }
+
+        #scoreboard {
+            position: absolute;
+            left: 0.6em;
+        }
+
+        #title {
+            position: absolute;
+            left: 35%;
+        }
+
+        #author {
+            position: absolute;
+            left: 45%;
+            top: 5%;
+            font-size: 1.5rem;
+        }
+
+        canvas {
+            background-color: rgb(225, 248, 255);
+        }
+
+        p {
+            font-size: 1.9rem;
+        }
+
+        ul {
+            position: relative;
+            bottom: 1.5em;
+            left: 0.5em;
+        }
+
+        li {
+            font-size: 1.3rem;
+            list-style-image: url(images/catBullet.png);
+        }
+
+        button {
+            width: 5em;
+            height: 2em;
+            border-radius: 0.4em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="scoreboard">Scoreboard</h1>
+    <h1 id="title">Raining Cats and Blocks</h1>
+    <p id="author">By Marcus Chan</p>
+    <canvas id="myCanvas" width="900" height="800">
+    </canvas>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Paint Application</title>
+    <style>
+      body {
+        background-color: bisque;
+      }
+      canvas {
+        background-color: white;
+        border: 2px solid rgb(235, 182, 133);
+      }
+    </style>
+    <script src="funct.js" defer></script>
+  </head>
+  <body>
+    <h1>Paint Application</h1>
+    <canvas id="canvas" width="600" height="600"></canvas><br />
+
+    <label>Select a color:</label>
+    <input type="color" id="colorPicker" value="#ff0000" /><br />
+
+    <label>Click to remember color: </label>
+    <button id="rememberMe">Remember Me</button>
+
+    <p id="colorList">Color list:</p>
+
+    <label>Click to cycle colors: </label>
+    <button id="cycle">Cycle Colors!</button>
+    <button id="stop">Stop Colors!</button>
+  </body>
+</html>
