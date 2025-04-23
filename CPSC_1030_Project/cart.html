@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/stylesheet.css">
+    <link rel="stylesheet" href="styles/cartstyle.css">
+    <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <script src="scripts/cartFunction.js"></script>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+<div id="wrapper">
+  <!-- main header with nav-->
+    <header>
+        <div id="logo">
+            <img src="images/logo.png" alt="plant logo">
+            <h1>ok bloomer</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="cart.html" id="cartButton"></a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="plants.html">Plants</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Only displayed when cart is empty -->
+    <h2 id="emptyHeader">Your Cart Is Empty</h2>
+    <br>
+    <!-- main content, Form contains the billing, table, and card info -->
+    <form id="billing">
+        <div id="info">
+          <!-- users info -->
+        <h3>Billing Details</h3>
+        <div class="labelled">
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+        </div>
+        <div class="labelled">
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+        </div>
+        <br>
+        <div class="labelled">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="JohnDoe@example.com" required>
+        </div>
+        <br>
+        <div class="labelled">
+          <label for="streetAddress">Street Address</label>
+          <input type="text" name="streetAddress" id="streetAddress" placeholder="123 Main St." required>
+        </div>
+        <br>
+        <div class="labelled">
+          <label for="city">City</label>
+          <input type="text" name="city" id="city" placeholder="City" required>
+        </div>
+        
+        <div class="labelled">
+          <label for="province">Province</label>
+          <select name="province" id="province" required>
+            <option disabled selected value> -- select an option -- </option>
+            <option value="AB">AB</option>
+            <option value="BC">BC</option>
+            <option value="MB">MB</option>
+            <option value="NB">NB</option>
+            <option value="NL">NL</option>
+            <option value="NT">NT</option>
+            <option value="NS">NS</option>
+            <option value="NU">NU</option>
+            <option value="ON">ON</option>
+            <option value="PE">PE</option>
+            <option value="QC">QC</option>
+            <option value="SK">SK</option>
+            <option value="YT">YT</option>
+          </select>
+        </div>
+        <br><br>
+        <!-- card input  -->
+        <h3>Payment Method</h3>
+        <div class="labelled">
+          <label for="cardNumber">Card Number</label>
+          <input type="number" name="cardNumber" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+        </div>
+        <br>
+        <div class="labelled">
+          <label for="cardType">Card Type</label>
+          <select name="cardType" id="cardType">
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="amex">American Express</option>
+          </select>
+        </div>
+        <br>
+        <div class="labelled">
+          <label for="expirationDate">Expiration (MM/YY)</label>
+          <input type="text" name="expirationDate" id="expirationDate" placeholder="MM/YY" required>
+        </div>
+        <br>
+        <div class="labelled">
+          <label for="securityCode">Card Security Code</label>
+          <input type="number" name="securityCode" id="securityCode" placeholder="123" required>
+        </div>
+        <br>
+        <!-- once the button is pressed, customer is sent to thank you page -->
+        <div id="buttons">
+            <button type="submit" class="button" onclick="submitFunct()">Confirm</button>
+          <button type="reset" class="button" id="resetButton">Reset</button>
+        </div>
+        
+        </div>
+        <!-- rows will be inputted as the customer adds them through plants.html -->
+        <table id="receipt">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th scope="col">#of Itm</th>
+                    <th scope="col">Plant</th>
+                    <th scope="col">Cost</th>
+                </tr>
+            </thead>
+        <tfoot>
+            <tr>
+                <th colspan="3" id="totalLabel">Total</th>
+                <th id="totalCost"></th>
+            </tr>
+        </tfoot>
+        </table>
+    </form>
+  <!-- page footer -->
+<footer>
+    <p>Copyright © 2023 Ok, Bloomer!<p>
+    <a href="mailto:marcus@chan.com">marcus@chan.com</a>
+</footer>
+</div>
+</body>
+</html>

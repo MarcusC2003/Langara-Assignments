@@ -1,0 +1,100 @@
+<!-- By Marcus Chan -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ok, Bloomer !</title>
+    <meta charset="utf-8">
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="styles/stylesheet.css">
+    <!-- icon -->
+    <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+    <!-- scripts -->
+    <script src="scripts/scrollFunction.js"></script>
+    <script src="scripts/initializeCart.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+    <!-- main header with nav -->
+<header>
+    <div id="logo">
+        <img src="images/logo.png" alt="plant logo">
+        <h1>ok bloomer</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="cart.html" id="cartButton"></a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="plants.html">Plants</a></li>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+</header> 
+<!-- welcome header -->
+<div id="welcome">
+    <h1>WELCOME TO</h1>
+    <h1>OUR SHOP</h1>
+</div>
+<div id="content">
+    <!-- scroll to top button -->
+    <input type="button" onclick="topFunction()" value="I" id="uparrow">
+    <!-- main content -->
+    <main>
+        <div id="aboutRow1">
+            <div class="aboutText">
+                <h2>Our Mission</h2>
+                <p>   
+                    Our small flower company is passionate about providing a variety of ferns and flowers that can bring the wonders of mother nature into your living space.
+                    We aim to educate people about the natural world and help them become successful plant parents through our resources and guidance on plant care and maintenance.
+                </p>
+            </div>
+            <video controls autoplay muted loop id="flowerVideo">
+                <source src="videos/flowerVideo.mp4" type="video/mp4">
+                <source src="videos/flowerVideo.mov" type="video/mov">
+                <source src="videos/flowerVideo.ogv" type="video/ogv">
+                <a href="videos/flowerVideo.mp4">Click to download video</a>
+            </video>
+        </div>
+        <div id="aboutRow2">
+            <div class="aboutImage" id="sustainability">
+                <img src="images/sustainability.png" alt="woman and girl planting " width="700">
+            </div>
+            <div class="aboutText">
+                <p>
+                    Sustainability and eco-friendliness are at the forefront of our values. We source our plants from reputable growers who use sustainable practices and use environmentally
+                    -friendly packaging materials whenever possible.
+                </p>
+            </div>
+        </div>
+       <div id="aboutRow3">
+            <div class="aboutText">
+                <p>
+                    By choosing us, you not only support our commitment to protecting the planet but also get to enjoy the beauty of nature in your home.
+                    Let us help you discover the joy of plant parenting and enhance your life with the wonders of mother nature.
+                </p>
+            </div>
+            <div class="aboutImage" id="tulipField">
+                <img src="images/tulipField.jpg" alt="tulip field" width="800">
+            </div>
+       </div>
+    </main>
+    <!-- links -->
+    <div id="piclinks">
+        <a href="plants.html" id="plants"><h3> Plants </h3></a>
+        <a href="contact.html" id="contact"><h3> Contact Us </h3></a>
+    </div>
+   
+</div>
+<!-- page footer -->
+<footer>
+    <p>Copyright © 2023 Ok, Bloomer!<p>
+    <a href="mailto:marcus@chan.com">marcus@chan.com</a>
+</footer>
+</div>
+</body>
+</html>
+ 

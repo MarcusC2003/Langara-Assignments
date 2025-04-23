@@ -1,0 +1,253 @@
+<!-- By Marcus Chan -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ok Bloomer !</title>
+    <meta charset="utf-8">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="styles/stylesheet.css">
+    <link rel="stylesheet" href="styles/searchstyle.css">
+    <!-- icon -->
+    <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <!-- scripts -->
+    <script src="scripts/searchFunctions.js"></script>
+    <script src="scripts/scrollFunction.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+  <!-- main header with nav -->
+  <header>
+    <div id="logo">
+      <img src="images/logo.png" alt="plant logo">
+      <h1>ok bloomer</h1>
+    </div>
+    <nav>
+      <ul>
+          <li><a href="cart.html" id="cartButton"></a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="plants.html">Plants</a></li>
+          <li><a href="index.html">Home</a></li>
+      </ul>
+  </nav>
+  </header>
+<!-- main content -->
+<main>
+<div id="content">
+  <!-- search box -->
+    <input type="button" onclick="topFunction()" value="I" id="uparrow"> 
+    <div id="searchBox">
+      <input type="text" id="searchInput" onkeyup="searchFunction()" value="search" placeholder="Search for plant.."><br>
+    </div>
+      <!-- displayBox divs contain each product -->
+        <div class="displayBox" id="rose">
+        <img src="images/plantList/rose.png" width="250" height="250" alt="Rose Flower">
+        <div class="plantDescription">
+            <h3>Rose</h3>
+            <p>A classic flower with many colors, originating from Europe and Asia.
+                 Known for its sweet fragrance, roses prefer well-draining soil and lots of sunlight. Blooms in the summer.</p>
+    
+            <div class="purchaseInfo">
+                <p class="price">Price: $7.99</p>
+                <div class="purchaseInput">
+                    <input type="number" name="itemNumber" id="roseItems" min="0" placeholder="Items">
+                    <button type="button" name="add" onclick="totalCost(this.value)" value="rose" >Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="displayBox" id="tulip">
+        <img src="images/plantList/tulip.jpg" width="250" height="250" alt="Tulip Flower">
+        <div class="plantDescription">
+            <h3>Tulip</h3>
+            <p>A bright and colorful flower originating from Turkey and commonly associated with Holland.
+                 Has no fragrance and prefers well-draining soil with some shade. Blooms in the spring.</p>
+    
+            <div class="purchaseInfo">
+                <p class="price">Price: $3.99</p>
+                <div class="purchaseInput">
+                    <input type="number" name="itemNumber" id="tulipItems" min="0" placeholder="Items">
+                    <button type="button" name="add" onclick="totalCost(this.value)" value="tulip">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="displayBox" id="lavender">
+        <img src="images/plantList/lavender.jpg" width="250" height="250" alt="Lavender Flower">
+        <div class="plantDescription">
+            <h3>Lavender</h3>
+            <p>Lavender is a fragrant herb that produces spikes of purple flowers. It originated from the Mediterranean region and is well-known for its calming aroma. Lavender grows best in well-draining soil and requires full sunlight. It blooms from late spring to early summer.</p>
+            <div class="purchaseInfo">
+                <p class="price">Price: $9.99</p>
+                <div class="purchaseInput">
+                    <input type="number" name="itemNumber" id="lavenderItems" min="0" placeholder="Items">
+                    <button type="button" name="add" onclick="totalCost(this.value)" value="lavender">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="displayBox" id="sunflower">
+        <img src="images/plantList/sunflower.png" width="250" height="250" alt="sunflower">
+        <div class="plantDescription">
+            <h3>Sunflower</h3>
+            <p>Sunflowers are large, yellow flowers that are native to North and Central America. They are known for their ability to turn their heads to follow the sun. Sunflowers prefer well-draining soil and full sunlight. They bloom from mid-summer to early fall.</p>
+            <div class="purchaseInfo">
+                <p class="price">Price: $12.99</p>
+                <div class="purchaseInput">
+                    <input type="number" name="itemNumber" id="sunflowerItems" min="0" placeholder="Items">
+                    <button type="button" name="add" onclick="totalCost(this.value)" value="sunflower">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="displayBox" id="succulent">
+        <img src="images/plantList/succulent.png" width="250" height="250" alt="Succulent">
+        <div class="plantDescription">
+          <h3>Succulent</h3>
+          <p>A low-maintenance plant with thick, fleshy leaves that come in various shades of green and purple. Originating from arid climates, succulents prefer well-drained soil and require only occasional watering. They thrive in bright, indirect sunlight and can be grown indoors or outdoors. Blooms in the summer.</p>
+          <div class="purchaseInfo">
+            <p class="price">Price: $4.99</p>
+            <div class="purchaseInput">
+              <input type="number" name="itemNumber" id="succulentItems" min="0" placeholder="Items">
+              <button type="button" name="add" onclick="totalCost(this.value)" value="succulent">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+    </div>
+      
+    <div class="displayBox" id="lily">
+        <img src="images/plantList/lily.png" width="250" height="250" alt="Cata Lily Flower">
+        <div class="plantDescription">
+          <h3>Calla Lily</h3>
+          <p>A beautiful flower with an elegant, trumpet-shaped white or yellow petal and a long, slender stem. Calla lilies are native to Southern Africa and are often used in weddings and other special occasions.</p>
+          <div class="purchaseInfo">
+            <p class="price">Price: $5.99</p>
+            <div class="purchaseInput">
+              <input type="number" name="itemNumber" id="lilyItems" min="0" placeholder="Items">
+              <button type=button name="add" onclick="totalCost(this.value)" value="lily">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="displayBox" id="orchid">
+        <img src="images/plantList/orchid.png" width="250" height="250" alt="Orchid Flower">
+        <div class="plantDescription">
+          <h3>Orchid</h3>
+          <p>A delicate and exotic flower with intricate patterns and colors. Orchids are one of the largest flowering plant families, with over 25,000 species found worldwide. They require special care and attention to thrive, and are often used as decorative plants in homes and gardens.</p>
+          <div class="purchaseInfo">
+            <p class="price">Price: $11.99</p>
+            <div class="purchaseInput">
+              <input type="number" name="itemNumber" id="orchidItems" min="0" placeholder="Items">
+              <button type=button name="add" onclick="totalCost(this.value)" value="orchid">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+    </div>
+      
+    <div class="displayBox" id="carnation">
+        <img src="images/plantList/carnation.png" width="250" height="250" alt="Carnation Flower">
+        <div class="plantDescription">
+            <h3>Carnation</h3>
+            <p>Carnations are beautiful, fragrant flowers that are often used in bouquets and floral arrangements. They come in a variety of colors including pink, red, white, yellow and purple. Carnations are known for their spicy, clove-like fragrance and have a long vase life. They require well-draining soil and plenty of sunlight to thrive.</p>
+            <div class="purchaseInfo">
+                <p class="price">Price: $10.99</p>
+                <div class="purchaseInput">
+                    <input type="number" name="itemNumber" id="carnationItems" min="0" placeholder="Items">
+                    <button type="button" name="add" onclick="totalCost(this.value)" value="carnation">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="displayBox" id="monstera">
+        <img src="images/plantList/monstera.png" width="250" height="250" alt="Monstera Plant">
+        <div class="plantDescription">
+            <h3>Monstera</h3>
+            <p>The monstera plant, also known as the "Swiss cheese plant", is a popular houseplant with large, glossy leaves that have distinctive holes and cuts. It's native to the tropical rainforests of Central America and requires a warm, humid environment to grow well. Monstera plants prefer well-draining soil and bright, indirect sunlight. They're also known for their air-purifying abilities.</p>
+            <div class="purchaseInfo">
+                <p class="price">Price: $29.99</p>
+                <div class="purchaseInput">
+                    <input type="number" name="itemNumber" id="monsteraItems" min="0" placeholder="Items">
+                    <button type="button" name="add" onclick="totalCost(this.value)" value="monstera">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="displayBox" id="azalea">
+        <img src="images/plantList/azalea.jpg" width="250" height="250" alt="Azalea flower">
+        <div class="plantDescription">
+            <h3>Azalea</h3>
+            <p>Azaleas are beautiful flowering shrubs that produce large, colorful blooms in the spring. They're available in a wide range of colors, including pink, red, white, purple, and yellow. Azaleas prefer acidic, well-draining soil and partial shade. They require regular watering, especially during hot, dry weather, and benefit from a layer of mulch to help retain moisture.</p>
+            <div class="purchaseInfo">
+                <p class="price">Price: $12.99</p>
+                <div class="purchaseInput">
+                    <input type="number" name="itemNumber" id="azaleaItems" min="0" placeholder="Items">
+                    <button type="button" name="add" onclick="totalCost(this.value)" value="azalea">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="displayBox" id="paradise">
+        <img src="images/plantList/bird.jpg" width="250" height="250" alt="Bird Of Paradise Flower">
+        <div class="plantDescription">
+          <h3>Bird of Paradise</h3>
+          <p>The Bird of Paradise is a striking tropical flower with orange and blue petals that resemble a bird in flight. It originated from South Africa and is commonly used in tropical garden designs. The flower requires well-draining soil and lots of sunlight.</p>
+          <div class="purchaseInfo">
+            <p class="price">Price: $29.99</p>
+            <div class="purchaseInput">
+              <input type="number" name="itemNumber" id="paradiseItems" min="0" placeholder="Items">
+              <button type="button" name="add" onclick="totalCost(this.value)" value="paradise">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="displayBox" id="cactus">
+        <img src="images/plantList/cactus.png" width="250" height="250" alt="Cactus">
+        <div class="plantDescription">
+          <h3>Cactus</h3>
+          <p>Cactus plants are known for their unique and interesting shapes, as well as their ability to survive in harsh desert environments. They come in many different varieties, from the tall and spiny saguaro cactus to the small and round barrel cactus. Cactus plants require well-draining soil and lots of sunlight.</p>
+          <div class="purchaseInfo">
+            <p class="price">Price: $4.99</p>
+            <div class="purchaseInput">
+              <input type="number" name="itemNumber" id="cactusItems" min="0" placeholder="Items">
+              <button type="button" name="add" onclick="totalCost(this.value)" value="cactus">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="displayBox" id="hydrangea">
+        <img src="images/plantList/hydrangea.png" width="250" height="250" alt="Hydrangea Flower">
+        <div class="plantDescription">
+          <h3>Hydrangea</h3>
+          <p>Hydrangeas are beautiful flowering shrubs that come in a variety of colors, including pink, blue, and white. They are popular in gardens and as cut flowers in bouquets. Hydrangeas prefer moist, well-draining soil and partial shade.</p>
+          <div class="purchaseInfo">
+            <p class="price">Price: $19.99</p>
+            <div class="purchaseInput">
+              <input type="number" name="itemNumber" id="hydrangeaItems" min="0" placeholder="Items">
+              <button type="button" name="add" onclick="totalCost(this.value)" value="hydrangea">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+</main>
+<!-- page footer -->
+<footer>
+    <p>Copyright © 2023 Ok, Bloomer!<p>
+    <a href="mailto:marcus@chan.com">marcug@chan.com</a>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,863 @@
+/* By Marcus Chan */
+
+/* import fonts*/
+@font-face {
+    font-family: "Dosis";
+    src: url(../fonts/Dosis-VariableFont_wght.ttf) format("opentype");
+  }
+@font-face {
+font-family: "Moon";
+src: url(../fonts/Moon2.0-Regular.otf) format("opentype");
+}
+
+* { 
+    box-sizing: border-box;
+    font-family:  'Moon', sans-serif, Helvetica;
+    scroll-behavior: smooth;
+}
+
+/* background for page*/
+#wrapper{
+    background-image: url(../images/wallpaper.jpg);
+    background-color: rgb(163, 207, 157);
+    background-size: cover;
+    background-repeat: repeat;
+    margin: auto;
+    background-size:40vh; 
+    min-height: 100vh;
+    position:relative;
+    background-attachment: fixed;
+}
+/* scroll to top button */
+#uparrow{
+    color: transparent;
+    background-image: url(../images/uparrow.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 99;
+    cursor: pointer;
+    border-radius: 100%;
+    border: none;
+    width: 2.5em;
+    height: 2.5em;
+}
+#uparrow:hover{
+    background-color: #3f794d;
+}
+/* ---------------------------------------------------------------------------- */
+/* main page header */
+header{
+    display: flex;
+    align-items: center; 
+    /* background:#1d8735; */
+    background-image: linear-gradient(#19782f 0%, rgb(26, 145, 26));
+    color:#d7e7db;
+    font-weight: bold; 
+    padding: 1em 1em 1em 1em;
+    border-bottom: 0.2em solid #0e4b0b;
+    max-height: 7em;
+
+}
+header #logo{
+    flex:8;
+    display: flex;
+    align-items: center;
+    order: 1;
+    margin: 1em;
+}
+header h1{
+    order: 2;
+    font-size: 2.5rem;
+    position: relative;
+    text-align: left;
+    text-shadow: 0px 0px 0.2em darkgreen;
+    padding: 0 0 0 0.5em;
+    font-family: "Moon", Verdana,Tahoma, sans-serif;
+}
+
+header img{
+    order:1;
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+}
+/* navigation */
+nav{
+    display: inline-block;
+    order: 2;
+    font-size: 1.1rem;
+    
+}
+nav li{
+    float:right;
+    margin-right: 1em;
+    list-style: none;
+}
+nav a{
+    display: block;
+    text-decoration: none;
+    color: #dddddd;
+    background-color: #299c48 ;
+    padding: 0.5em 1em 0.5em 1em;
+    box-shadow: 2px 2px 3px green;
+    border-radius: 2em;
+    text-align: center;
+}
+
+nav li #cartButton{
+    background-image: url("../images/bag.png");
+    background-size:1.5em 1.5em;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding:1em 2em 1.1em 1.5em;
+
+}
+
+nav a:link{
+    color:#FEF6C2;
+}
+nav a:visited{
+    color: rgb(222, 238, 217);
+}
+nav a:hover{
+    color: #CC9933;
+    background-color:rgb(182, 230, 182);
+    cursor: pointer;
+}
+
+
+/* --------------------------------------------------------------------------- */
+/* welcome header */
+#welcome{
+    background-image: url(../images/background2.jpg);
+    background-size: cover;
+    height: 900px;
+    background-repeat:no-repeat;
+    border-bottom: 0.6em solid #3f794d;
+    margin:0 0 3% 0;
+}
+#welcome h1{
+    color:white;
+    text-align: center;
+    font-weight: bold;
+    text-shadow:0 0 0.2em rgb(84, 137, 160);
+    font-size: 7rem;
+    position: relative;
+    top:2.5em;
+    margin: auto;
+}
+/* --------------------------------------------------------------------------- */
+/* content is the flex box for the main content of the page */
+/* aboutRows --> each row of text and pictures/video */
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    order: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    padding:1.5em;
+}
+#aboutRow1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:2% 0 0 0;
+}
+#flowerVideo{
+    order:2;
+    flex:6;
+    width: 50%;
+    max-width: 45%;
+    height: 50%;
+    border-radius: 3em;
+    border:0.8em solid #3f794d;
+    margin:1em 1em 1em 1em ;
+}
+
+.aboutText{
+    flex:4;
+    line-height: 2em;
+    background-color: #3f794d;
+    color:rgb(225, 240, 224);
+    font-size: 1.7rem;
+    padding:1.5em 2em 1.5em 2em;
+    border-radius: 4em;
+    min-width: 30%;
+    max-width: 45%;
+    margin:1em 1em 1em 1em;
+
+}
+
+#aboutRow2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:2% 0 0 0;
+}
+.aboutImage{
+    flex:5;
+    padding: 1em 1em 1em 1em ;
+    width:100%;
+}
+#sustainability{
+    text-align: center;
+}
+#aboutRow3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:2% 0 0 0;
+}
+#tulipField{
+    text-align: center;
+
+}
+.aboutImage img{
+    border-radius: 3em;
+    border:0.8em solid #3f794d;
+    max-width: 100%;
+}
+/* ---------------------------------------------------------------------------- */
+#piclinks{
+    order:2;
+    display:flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;    
+    text-shadow: 0.2em 0.2em 1em rgb(58, 11, 30);
+}
+#piclinks a{
+    text-decoration: none;
+}
+#piclinks a:link{
+    color:white;
+}
+#piclinks a:visited{
+    color: #ffffff;
+}
+#piclinks a:hover{
+    color: rgb(23, 105, 34);
+}
+/* link to plants */
+#plants{
+    order: 1;
+    flex:5;
+    font-size: 2.5rem;
+    background-image: url(../../images/plantButton.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 1.5em;
+    border: 0.3em solid #3f794d;
+    width:30em;
+    height: 8em;
+    padding: 1.5em 0 0 0;
+    margin: 5% 5% 5% 5%;
+
+} 
+/* link to contacts */
+#contact{
+    order: 2;
+    flex:5;
+    background:linear-gradient(#3f794d,rgb(83, 161, 83),#3f794d)                                    ;
+    font-size: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 1.5em;
+    border: 0.3em solid #3f794d;
+    margin: 5% 5% 5% 5%;
+    padding: 1.5em 0 0 0;
+    width:10em;
+    height: 8em;
+
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* page footer */
+
+footer{
+    background-color:#1d8735 ;
+    font-style: italic;
+    font-size: 1em;
+    text-align: center;
+    color: white;
+    padding: 0.5em;
+
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+/* keeps the page at a 2 col layout */
+/* resizes all content smaller */
+@media(max-width:1200px) and (min-width:769px){
+    #wrapper{
+        background-image: url(../images/wallpaper.jpg);
+        background-color: rgb(163, 207, 157);
+        background-size: cover;
+        background-repeat: repeat;
+        margin: auto;
+        background-size:40vh;
+        min-height: 100vh;
+        position:relative;
+        background-attachment: fixed;
+    }
+    #uparrow{
+        background-image: url(../images/uparrow.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: none;
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 99;
+        cursor: pointer;
+        border-radius: 100%;
+        border: none;
+        width: 2.5em;
+        height: 2.5em;
+    }
+    #uparrow:hover{
+        background-color: #3f794d;
+    }
+    header{
+        display: flex;
+        align-items: center; 
+        /* background:#1d8735; */
+        background-image: linear-gradient(#19782f 0%, rgb(26, 145, 26));
+        color:#d7e7db;
+        font-weight: bold; 
+        padding: 1em 1em 1em 1em;
+        border-bottom: 0.2em solid #0e4b0b;
+        max-height: 7em;
+    
+    }
+    header #logo{
+        flex:8;
+        display: flex;
+        align-items: center;
+        order: 1;
+        margin: 1em;
+    }
+    header h1{
+        order: 2;
+        font-size: 2.5rem;
+        position: relative;
+        text-align: left;
+        text-shadow: 0px 0px 0.2em darkgreen;
+        padding: 0 0 0 0.5em;
+    }
+
+    header img{
+        order:1;
+        border-radius: 100%;
+        width: 70px;
+        height: 70px;
+    }
+    nav{
+        display: inline-block;
+        order: 2;
+        font-size: 1.1rem;
+        min-width: 460px;
+        
+    }
+    nav li{
+        float:right;
+        margin-right: 1em;
+        list-style: none;
+    }
+    nav a{
+        display: block;
+        text-decoration: none;
+        color: #dddddd;
+        background-color: #299c48 ;
+        padding: 0.5em 1em 0.5em 1em;
+        box-shadow: 2px 2px 3px green;
+        border-radius: 1em;
+        text-align: center;
+    }
+    
+    nav li #cartButton{
+        background-image: url("../images/bag.png");
+        background-size:1.5em 1.5em;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding:1em 2em 1.1em 1.5em;
+    
+    }
+    
+    nav a:link{
+        color:#FEF6C2;
+    }
+    nav a:visited{
+        color: rgb(222, 238, 217);
+    }
+    nav a:hover{
+        color: #CC9933;
+        background-color:rgb(182, 230, 182);
+        cursor: pointer;
+    }
+    
+    #welcome{
+        background-image: url(../../images/background2.jpg);
+        background-size: cover;
+        height: 800px;
+        background-repeat:no-repeat;
+        border-bottom: 0.6em solid #3f794d;
+        margin:0 0 3% 0;
+    }
+    #welcome h1{
+        color:white;
+        text-align: center;
+        font-weight: bold;
+        text-shadow:0 0 0.2em rgb(84, 137, 160);
+        font-size: 6rem;
+        position: relative;
+        top:2.5em;
+        margin: auto;
+    }
+    #content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main{
+        order: 1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    
+        padding:1.5em;
+    }
+    #aboutRow1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:2% 0 0 0;
+    }
+    #flowerVideo{
+        order:2;
+        flex:6;
+        width: 50%;
+        max-width: 45%;
+        height: 50%;
+        border-radius: 3em;
+        border:0.8em solid #3f794d;
+        margin:1em 1em 1em 1em ;
+    }
+    
+    .aboutText{
+        flex:4;
+        line-height: 2em;
+        background-color: #3f794d;
+        color:rgb(225, 240, 224);
+        font-size: 1rem;
+        padding:1.5em 2em 1.5em 2em;
+        border-radius: 4em;
+        min-width: 30%;
+        max-width: 45%;
+        margin:1em 1em 1em 1em;
+    
+    }
+    
+    #aboutRow2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:2% 0 0 0;
+    }
+    .aboutImage{
+        flex:5;
+        padding: 1em 1em 1em 1em ;
+        width:100%;
+    }
+    #sustainability{
+        text-align: center;
+    }
+    #aboutRow3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:2% 0 0 0;
+    }
+    #tulipField{
+        text-align: center;
+    
+    }
+    .aboutImage img{
+        border-radius: 3em;
+        border:0.8em solid #3f794d;
+        max-width: 100%;
+    }
+    #piclinks{
+        order:2;
+        display:flex;
+        flex-wrap: wrap;
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        justify-content: center;
+        align-items: center;    
+        text-shadow: 0.2em 0.2em 1em rgb(58, 11, 30);
+    }
+    #piclinks a{
+        text-decoration: none;
+    }
+    #piclinks a:link{
+        color:white;
+    }
+    #piclinks a:visited{
+        color: #ffffff;
+    }
+    #piclinks a:hover{
+        color: rgb(23, 105, 34);
+    }
+    #plants{
+        order: 1;
+        flex:5;
+        font-size: 1.5rem;
+        background-image: url(../../images/plantButton.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 1.5em;
+        border: 0.3em solid #3f794d;
+        width:30em;
+        height: 8em;
+        padding: 1.5em 0 0 0;
+        margin: 5% 5% 5% 5%;
+    
+    } 
+    #contact{
+        order: 2;
+        flex:5;
+        background:linear-gradient(#3f794d,rgb(83, 161, 83),#3f794d)                                    ;
+        font-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 1.5em;
+        border: 0.3em solid #3f794d;
+        margin: 5% 5% 5% 5%;
+        padding: 1.5em 0 0 0;
+        width:10em;
+        height: 8em;
+    
+    }
+        
+    footer{
+        background-color:#1d8735 ;
+        font-style: italic;
+        font-size: 1em;
+        text-align: center;
+        color: white;
+        padding: 0.5em;
+    
+        position: absolute;
+        top: 100%;
+        width: 100%;
+    }
+}
+
+/* converts page to a single col layout */
+/* removes images but keeps video */
+@media (max-width:768px){
+    #wrapper{
+        background-image: url(../images/wallpaper.jpg);
+        background-color: rgb(163, 207, 157);
+        background-size: cover;
+        background-repeat: repeat;
+        margin: auto;
+        background-size:40vh; 
+        min-height: 100vh;
+        position:relative;
+        background-attachment: fixed;
+    }
+    #uparrow{
+        background-image: url(../images/uparrow.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: none;
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 99;
+        cursor: pointer;
+        border-radius: 100%;
+        border: none;
+        width: 2.5em;
+        height: 2.5em;
+    }
+    #uparrow:hover{
+        background-color: #3f794d;
+    }
+    /* ---------------------------------------------------------------------------- */
+    header{
+        display: flex;
+        align-items: center; 
+        justify-items: center;
+        background-image: linear-gradient(#19782f 0%, rgb(26, 145, 26));
+        flex-direction: column;
+        color:#d7e7db;
+        font-weight: bold; 
+        padding: 0 1em 1em 1em;
+        border-bottom: 0.2em solid #0e4b0b;
+        max-height: 13em;
+    
+    }
+    header #logo{
+        flex:8;
+        display: flex;
+        align-items: center;
+        order: 1;
+        margin: 1em;
+    }
+    header h1{
+        order: 2;
+        font-size: 2.5rem;
+        position: relative;
+        text-align: left;
+        text-shadow: 0px 0px 0.2em darkgreen;
+        padding: 0 0 0 0.5em;
+    }
+    
+    header img{
+        order:1;
+        border-radius: 100%;
+        width: 70px;
+        height: 70px;
+    }
+    nav{
+        display: inline-block;
+        order: 2;
+        font-size: 1.1rem;
+        position: relative;
+        bottom: 0.3em;
+    }
+    nav li{
+        float:right;
+        margin-right: 1em;
+        list-style: none;
+    }
+    nav a{
+        display: block;
+        text-decoration: none;
+        color: #dddddd;
+        background-color: #299c48 ;
+        padding: 0.5em 1em 0.5em 1em;
+        box-shadow: 2px 2px 3px green;
+        border-radius: 2em;
+        text-align: center;
+    }
+    
+    nav li #cartButton{
+        background-image: url("../images/bag.png");
+        background-size:1.5em 1.5em;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding:1em 2em 1.1em 1.5em;
+    
+    }
+    
+    nav a:link{
+        color:#FEF6C2;
+    }
+    nav a:visited{
+        color: rgb(222, 238, 217);
+    }
+    nav a:hover{
+        color: #CC9933;
+        background-color:rgb(182, 230, 182);
+        cursor: pointer;
+    }
+    
+    
+    /* --------------------------------------------------------------------------- */
+    #welcome{
+        background-image: url(../../images/background2.jpg);
+        background-size: cover;
+        height: 350px;
+        background-repeat:no-repeat;
+        border-bottom: 0.6em solid #3f794d;
+        margin:0 0 0 0;
+    }
+    #welcome h1{
+        color:white;
+        text-align: center;
+        font-weight: bold;
+        text-shadow:0 0 0.2em rgb(84, 137, 160);
+        font-size: 3rem;
+        position: relative;
+        top:2.3em;
+        margin: auto;
+    }
+    /* --------------------------------------------------------------------------- */
+    #content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main{
+        order: 1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    
+        padding:1.5em;
+    }
+    #aboutRow1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        margin:2% 0 0 0;
+    }
+    #flowerVideo{
+        order:2;
+        width: 100%;
+        max-width: 100%;
+        height: 50%;
+        border-radius: 3em;
+        border:0.8em solid #3f794d;
+        margin:0 0 1em 0;
+    }
+    
+    .aboutText{
+        flex:4;
+        line-height: 2em;
+        background-color: #3f794d;
+        color:rgb(225, 240, 224);
+        font-size: 1rem;
+        padding:1.5em 2em 1.5em 2em;
+        border-radius: 4em;
+        min-width: 100%;
+        max-width: 45%;
+        margin:0.5em 0.5em 0.5em ;
+    
+    }
+    
+    #aboutRow2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:2% 0 0 0;
+    }
+    .aboutImage{
+        display: none;
+        flex:5;
+        padding: 1em 1em 1em 1em ;
+        width:100%;
+    }
+    #sustainability{
+        text-align: center;
+    }
+    #aboutRow3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:2% 0 0 0;
+    }
+    #tulipField{
+        text-align: center;
+    
+    }
+    .aboutImage img{
+        border-radius: 3em;
+        border:0.8em solid #3f794d;
+        max-width: 100%;
+    }
+    /* ---------------------------------------------------------------------------- */
+    #piclinks{
+        order:2;
+        display:flex;
+        flex-wrap: wrap;
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        justify-content: center;
+        align-items: center;   
+        flex-direction: column; 
+        text-shadow: 0.2em 0.2em 1em rgb(58, 11, 30);
+    }
+    #piclinks a{
+        text-decoration: none;
+    }
+    #piclinks a:link{
+        color:white;
+    }
+    #piclinks a:visited{
+        color: #ffffff;
+    }
+    #piclinks a:hover{
+        color: rgb(23, 105, 34);
+    }
+    #plants{
+        order: 1;
+        flex:5;
+        font-size: 1.5rem;
+        background-image: url(../../images/plantButton.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 1.5em;
+        border: 0.3em solid #3f794d;
+        width:30em;
+        height: 8em;
+        max-width: 65%;
+        padding: 1em 0 1em 0;
+        margin: 5% 5% 0 5%;
+    
+    } 
+    #contact{
+        order: 2;
+        flex:5;
+        background:linear-gradient(#3f794d,rgb(83, 161, 83),#3f794d)                                    ;
+        font-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 1.5em;
+        border: 0.3em solid #3f794d;
+        padding: 1em 0 1em 0;
+        max-width: 65%;
+        width:20em;
+        height: 8em;
+        position:relative;
+    
+    }
+    
+    /* -------------------------------------------------------------------------------- */
+    
+    footer{
+        background-color:#1d8735 ;
+        font-style: italic;
+        font-size: 1em;
+        text-align: center;
+        color: white;
+        padding: 0.5em;
+    
+        position: absolute;
+        top: 100%;
+        width: 100%;
+    }
+}

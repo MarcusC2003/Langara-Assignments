@@ -1,0 +1,258 @@
+/* By Marcus Chan */
+h2{
+    background-color: #3f794d;
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    margin:  2em 25% 2em 25%;
+    padding: 2em 2em 2em 2em;
+    border-radius: 1em;
+}
+
+header{
+    margin: 0 0 1em 0;
+}
+/* styles the form using a flex display  */
+#billing{
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+    padding:2em 2em 2em 2em ;
+    border-radius: 2em;
+    font-size: 1.5rem;
+    box-shadow: 3px 5px 10px rgb(2, 82, 2);
+    width: 60%;
+    min-width: 80%;
+    margin:auto;
+    margin-top: 3em ;
+    position:relative;
+    bottom: 1.5em;
+}
+#billing #info{
+    order: 1;
+    flex:6;
+    min-width:15em;
+}
+.labelled{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding:0 0 0.5em 0;
+}
+.labelled label{
+    font-size: 0.9rem;
+}
+.labelled input{
+    font-size:1.3rem;
+}
+.lablled select{
+    max-width: 2em;
+}
+
+#billing h1{
+    padding:0 0 3em 0;
+}
+
+/* styles the table */
+#receipt{
+    order:2;
+    flex:4;
+    background-color: white;
+    border: 4px solid darkgreen;
+    border-collapse: collapse;
+    width: 50%;
+    margin: 5% 1em 0 0;
+    font-size: 1.3rem;
+    text-align: center;
+    max-width: 800px;
+}
+#receipt thead tr{
+    background-color: #3f794d;
+    color: white;
+    height: 2.5em;
+    border: 4px solid darkgreen;
+}
+#receipt tfoot {
+    height: 2.5em;
+    border-top: 4px solid darkgreen;
+}
+/* styles thead and tfoot background color and size */
+#receipt tr td:first-child{
+    background-color: #3f794d;
+    border: 4px solid darkgreen;
+    width: 3em;
+}
+/* stles the num of items col */
+#receipt tr td:nth-child(2){
+    width: 5em;
+}
+/* stles the name of product col */
+#receipt tr td:nth-child(3){
+    width: 60%;
+}
+/* styles the remove item col */
+#receipt tr td:first-child #removeItem{
+    background-color: #3f794d;
+    background-image: url(../images/trashcan.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    height: 2em;
+    width: 2em;
+}
+#receipt tr td:first-child:hover{
+    background-color: #b1e7b1;
+}
+/*even rows white, odd rows light green*/
+#receipt tr:nth-child(even) {
+    background-color: #cbebcb;
+}
+#receipt tr:nth-child(odd) {
+    background-color: white;
+}
+  /* styles footer */
+#receipt tr:last-child{
+    background-color: #3f794d;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    height: 2em;
+    width: 2em;
+}
+  
+#receipt td, #receipt th {
+    text-align: center;
+    padding: 0.2em
+}
+  
+#receipt tfoot th#totalLabel {
+    text-align: left;
+    padding: 0 0 0 0.2em;
+}
+
+/* shifts the table to the top of the reciept */
+/* adjusts sizing, margin, padding */
+@media(max-width:1048px){
+    h2{
+        padding:1.5em 1.5em 1.5em 1.5em;
+        margin:  2em 10% 2em 10%;
+    }
+    header{
+    margin: 0 0 1em 0;
+    }
+    #billing{
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        background-color: white;
+        padding:2em 2em 2em 2em ;
+        border-radius: 2em;
+        font-size: 1.3rem;
+        box-shadow: 3px 5px 10px rgb(2, 82, 2);
+        min-width: 80%;
+        margin-top: 3em ;
+        position:relative;
+        bottom: 1.5em;
+    }
+    #billing #info{
+        order: 1;
+        flex:6;
+        min-width:90%;
+        margin: auto;
+    }
+    .labelled{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding:0 0 0.5em 0;
+    }
+    .labelled label{
+        font-size: 0.9rem;
+    }
+    .labelled input{
+        font-size:1.3rem;
+    }
+    .lablled select{
+        max-width: 2em;
+    }
+    
+    
+    #billing h1{
+        padding:0 0 3em 0;
+    }
+    
+    #receipt tr td:first-child{
+        background-color: #3f794d;
+        border: 4px solid darkgreen;
+        width: 3em;
+    }
+    #receipt tr td:nth-child(2){
+        width: 5em;
+    }
+    #receipt tr td:nth-child(3){
+        width: 60%;
+    }
+    
+    #receipt tr td:first-child #removeItem{
+        background-color: #3f794d;
+        background-image: url(../images/trashcan.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border: none;
+        height: 2em;
+        width: 2em;
+    }
+    #receipt tr td:first-child:hover{
+        background-color: #b1e7b1;
+    }
+    #receipt tr:nth-child(even) {
+        background-color: #cbebcb;
+    }
+    #receipt tr:nth-child(odd) {
+        background-color: white;
+    }
+    #receipt{
+        order:2;
+        flex:4;
+        background-color: white;
+        border: 4px solid darkgreen;
+        border-collapse: collapse;
+        width: 90%;
+        margin: 5% 1em 0 0;
+        font-size: 1.3rem;
+        text-align: center;
+        max-width: 800px;
+    }
+    #receipt thead tr{
+        background-color: #3f794d;
+        color: white;
+        height: 2.5em;
+        border: 4px solid darkgreen;
+    }
+    #receipt tfoot {
+        height: 2.5em;
+        border-top: 4px solid darkgreen;
+    }
+    #receipt tr:last-child{
+        background-color: #3f794d;
+        color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border: none;
+        height: 2em;
+        width: 2em;
+    }
+      
+    #receipt tfoot th#totalLabel {
+        text-align: left;
+        padding: 0 0 0 0.2em;
+    }
+
+}
+
+

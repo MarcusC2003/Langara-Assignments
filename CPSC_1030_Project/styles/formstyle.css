@@ -1,0 +1,133 @@
+/* By Marcus Chan */
+#content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:5% 5% 5% 15%;
+}
+ 
+form{
+    order:1;
+    flex:3;
+    background-color: white;
+    padding:2em 4em 3em 4em ;
+    border-radius: 15%;
+    font-size: 1.2rem;
+    box-shadow: 3px 5px 10px rgb(2, 82, 2);
+    margin:2em 0 2em 0;
+    width: 30%;
+}
+form h1{
+    padding:0 0 3em 0;
+}
+form label{
+    display: inline;
+    float:left;
+    text-align: left;
+    padding:0 1em 1em 1em;
+}
+form input{
+    display: inline;
+    float: right;
+    padding: 0.5em;
+    width:50%;
+}
+fieldset{
+    border:none;
+}
+fieldset textarea{
+    width: 100%;
+}
+figure{
+    order:2;
+    flex:4;
+}
+figure img{  
+    border-radius: 15%;
+    width: 30%;
+    border: 3px solid rgb(186, 240, 155);
+    width:80%;
+    height:80%;
+}
+.button {
+    width:8em;
+    height:2em;
+    clear:right;
+    margin: 0 15% 0 15%;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+/* removes image and adjusts sizing, margin, padding */
+@media (max-width:1200px){
+    #content{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin:0 5% 0 5%;
+    }
+    form{
+        order:1;
+        flex:3;
+        background-color: white;
+        padding:1em 3em 1em 3em ;
+        border-radius: 2em;
+        font-size: 1.2rem;
+        box-shadow: 3px 5px 10px rgb(2, 82, 2);
+        margin:1em 0 1em 0;
+        width:100%;
+    }
+    form h1{
+        padding:0 0 3em 0;
+    }
+    form label{
+        display: inline;
+        float:left;
+        text-align: left;
+        padding:0 1em 1em 1em;
+    }
+    form input{
+        display: inline;
+        float: right;
+        padding: 0.5em;
+        width:50%;
+    }
+    .button {
+        width:8em;
+        height:2em;
+        clear:right;
+        margin: 0 12% 0 12%;
+    }
+    fieldset{
+          border:none;
+    }
+    fieldset textarea{
+        width: 100%;
+    }
+    
+    figure{
+        order:2;
+        flex:4;
+    }
+    figure img{  
+        display:none;
+    }
+    .button {
+        width:8em;
+        height:2em;
+        margin: 0 10% 0 10%;
+    }
+    #buttons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #resetButton{
+        float:right;
+    }
+}
+

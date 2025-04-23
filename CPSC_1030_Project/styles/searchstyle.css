@@ -1,0 +1,80 @@
+/* By Marcus Chan */
+
+/* styles the search box*/
+#searchBox{
+  display: flex;
+  position: sticky;
+  top: 0px;
+  margin: 0 0 0 0;
+}
+
+ #searchInput {
+  background-image: url('../images/searchicon.png');
+  background-position: 10px 12px; 
+  background-repeat: no-repeat;
+  width: 100%; 
+  font-size: 16px; 
+  padding: 12px 10em 12px 40px; 
+  border: 2px solid #3f794d;
+  margin: 1em 0 1em 0;
+}
+/* --------------------------------------------------------- */
+/* display box configures each product on the page */
+.displayBox{
+  display: flex;
+  align-items: center;
+  margin: 0 5% 4em 5%;
+  padding:1.5em 1.5em 1.5em 1.5em;
+  background-color: #3f794d;
+  color:white;
+  border-radius: 2em;
+  /* border: 0.3em solid rgb(181, 223, 181); */
+  box-shadow: 0 0 2em rgb(74, 128, 74);
+  max-width: 60em;
+  min-width: 500px;
+  min-height: 250px;
+}
+.displayBox img{
+  order:1;
+  flex:3;
+  border-radius: 1.5em;
+  border: 0.3em solid rgb(16, 63, 16);
+  mask-repeat: no-repeat;
+  max-width:15em;
+}
+.displayBox .plantDescription{
+  order:2;
+  flex:6;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5em;
+  font-size: 1.2rem;
+  padding: 0 1em 0 1em;
+}
+.displayBox .purchaseInfo{
+  order:2;
+  margin-top:auto;
+  display: flex;
+  align-items: baseline;
+
+}
+/* purchase Info styles the Price section of the DisplayBox */
+.purchaseInfo .price{
+  order: 1;
+  flex: 1;
+  display: inline-block;
+
+}
+.purchaseInfo .purchaseInput{
+  order: 2;
+  display: inline-block;
+  padding:0 1em 0 0 ;
+}
+.purchaseInfo input{
+  width: 60px;
+  padding: 0.3em;
+  margin: 0 0.5em 0 0;
+}
+.purchaseInfo button{
+  padding: 0.3em;
+}
