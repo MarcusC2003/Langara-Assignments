@@ -1,0 +1,88 @@
+#wrapper{
+    background-color: #ddcdcd;
+    display: grid;
+    grid-template: 
+    "header header header" auto
+    "nav main aside" auto
+    "footer footer footer" auto/
+    20% 60% 20%;
+    box-shadow: 5px 5px 10px rgb(56, 55, 55);
+
+
+}
+header{
+    grid-area: header;
+    background-color: #dabd9a;
+    border:7px dashed #725126;
+    border-radius: 20px;
+    text-align: center;
+    text-shadow: 5px 5px 5px #806543 ;
+
+}
+nav{
+    grid-area: nav;
+    background-color: #ddcdcd;
+}
+nav ul{
+    list-style: none;
+    padding-right: 15px;
+
+}
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    background-color: #bb6262;
+    padding: 22px 10px 22px 10px;
+    border: 3px solid #ddcdcd;
+    text-align: left;
+    margin:0 2em 0 ;
+    min-height: 22px;
+    
+}
+.sprite{
+    float: right;
+    object-fit: cover;
+    position: relative;
+    bottom: 20px;
+    left: 15px
+}
+main{
+    grid-area: main;
+    background-color: #c4b4ad;
+
+}
+
+aside{
+    grid-area: aside;
+    background-color: #ddcdcd;
+
+}
+#asideP{
+    background-color: white;
+    padding:0.8em;
+    margin: 0 1em 1em 1em;
+    box-shadow: 5px 4px 7px black;
+}
+footer{
+    grid-area: footer;
+    background-color: #d8b279;
+    font-style: italic;
+    font-size: small;
+    text-align: center;
+}
+#border{
+    padding: 1em 1.5em 1em 1.5em;
+    background-image: linear-gradient(to right,#b85656, rgb(226, 195, 195), #c27c7c);
+}
+#bkgroundimage{
+    background-image: url(backgrndimage.jpg);
+    height: 300px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+figure{
+    text-align: center;
+}

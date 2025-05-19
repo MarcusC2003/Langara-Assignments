@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lab 13</title>
+  <style>
+    h3 {
+      text-align: center;
+    }
+
+    .question1 {
+      background-color: aqua;
+    }
+
+    .question2,
+    .question4 {
+      background-color: rgb(216, 194, 216);
+      text-align: center;
+    }
+
+    .question3 {
+      background-color: aqua;
+      text-align: center;
+    }
+  </style>
+  <script src="solution.js" defer></script>
+
+</head>
+
+<body>
+
+  <div class="question1">
+
+    <h3>Question 1</h3>
+    <form>
+      <label for="amount"> Enter the Bill Amount: </label>
+      <input type="text" name="amount" id="amount">
+      <button type="button" onclick="calculateTip()">Calculate Tip</button>
+    </form>
+    <h4 id="result"></h4>
+  </div>
+
+
+
+  <div class="question2">
+
+    <h3>Question 2</h3>
+    <button type="button" onclick="changeColorY()">Press here for a light yellow background</button>
+    <button type="button" onclick="changeColorG()"> Press for a light green background</button>
+    <br>
+    <br>
+
+  </div>
+
+  <div class="question3">
+
+    <h3>Question 3</h3>
+    <h3>Converting temperature from degrees Fahrenheit to degrees Celsius (use prompt and alert)</h3>
+    <button type="button" onclick="changeDegrees()"> Temerature Conversion</button>
+    <br>
+    <br>
+  </div>
+
+  <div class="question4">
+    <h3>Question 4</h3>
+    <form name="calc">
+      <label for="number1"> Number 1: </label>
+      <input type="number" name="number1" id="number1" value="0" />
+      <label for="number2"> Number 2: </label>
+      <input type="number" name="number2" id="number2" value="0" />
+      <label for="result2"> Result: </label>
+      <input type="text" name="result2" id="result2" disabled="0"/> <br />
+      <br><br>
+      <h5>Click to choose an operation and see the answer</h5>
+      <input type="button" value="+" name="Add" id="Add" onclick="add()"/>
+      <input type="button" value="-" name="Sub" id="Sub" onclick="sub()"/>
+      <input type="button" value="x" name="Mul" id="Mul" onclick="mul()"/>
+      <input type="button" value="/" name="Div" id="Div" onclick="div()"/>
+      <input type="button" value="C" name="Clear" id="Clear" onclick="clearForm()"/>
+    </form>
+  </div>
+</body>
+
+</html>

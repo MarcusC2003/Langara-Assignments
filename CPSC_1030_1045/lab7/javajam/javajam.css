@@ -1,0 +1,72 @@
+body{
+    background-image: url("images/fadedroad50.jpg");
+    background-size: 150em;
+    background-repeat: no-repeat;
+    color: #221811;
+    font-family:'Tahoma',Arial, sans-serif;
+}
+header{
+    background-color: #D2B48C;
+    color: #8C3826;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+h1{
+    font-size: 3em;
+}
+h2{
+    color: #8C3826;
+}
+h3,dt{
+    color: #8C3826
+}
+h4{
+    background-color: #D2B48C;
+    font-size: 1.2em;
+    padding-left: .5em;
+    padding-bottom: .25em;
+}
+nav{
+    text-align: center;
+    font-weight: bold;
+}
+nav a{
+    text-decoration: none;
+}
+main{
+    padding: 2em;
+    display: block;
+}
+footer{
+    background-color: #D2B48C;
+    font-size: .60em;
+    font-style: italic;
+    text-align: center;
+    padding: 1em;
+    border-top: 2px #8C3826;
+}
+img{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#wrapper{
+    background-color: #FEFAEB;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    min-width: 900px;
+    max-width: 1280px;
+    box-shadow: 5px 5px 4px;
+}
+#homehero{
+    height: 300px;
+    background-image: url(images/hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.details{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+

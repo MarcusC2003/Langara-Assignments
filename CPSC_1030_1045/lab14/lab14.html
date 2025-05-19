@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lab14</title>
+    <meta charset="utf-8">
+    <script src="solution.js"></script>
+</head>
+<body>
+    <h1>Lab 14</h1>
+    <h3>Task 1</h3>
+    <hr>
+    <p>Which of the following are the most popular sports in Canada?</p>
+    <form>
+        <input type="checkbox" id="basketball" value="Basketball" name="task1">
+        <label for="basketball">Basketball</label><br><br>
+        
+        <input type="checkbox" id="rugby" value="Rugby" name="task1">
+        <label for="rugby">Rugby</label><br><br>
+
+        <input type="checkbox" id="soccer" value="Soccer" name="task1">
+        <label for="soccer">Soccer</label><br><br>
+
+        <input type="checkbox" id="cricket" value="Cricket" name="task1">
+        <label for="cricket">Cricket</label><br><br>
+        
+        <input type="checkbox" id="baseball" value="Baseball" name="task1">
+        <label for="baseball">Baseball</label><br><br>
+
+        <button type="checkbox" id="reset" name="reset"> Reset</button>
+        <button type="button"id="display" name="display" onclick="selectSports()">Display Sports</button>
+    </form> 
+
+    <h4>The most popular sports are:</h4>
+    <p id="para1"></p>
+
+    <hr>
+    <h3>Task 2</h3>
+    <p>Select a color</p>
+    <select id="task2" name="task2" onchange="selectColors()">
+        <option value="Purple">Purple</option>
+        <option value="Green">Green</option>
+        <option value="Red">Red</option>
+        <option value="Orange">Orange</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Pink">Pink</option>
+    </select>
+   
+    <h4 id="t2_h4">You selected the color: </h4>
+</body>
+</html>
